@@ -15,19 +15,33 @@ public class Laptop {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
+	@Column(name = "brand")
 	private String company;
+	@Column(name = "model")
 	private String product;
+	@Column(name = "type")
 	private String typename;
-	private Double inches;
+	private Float inches;
 
-	@Column(name = "screen_resolution")
+	@Column(name = "resolution")
 	private String screenResolution;
-	private String ram;
-	private String memory;
+	@Column(name = "resolution_benchmark")
+	private Integer resolutionBenchmark;
+	private String cpu;
+	@Column(name = "cpu_benchmark")
+	private Integer cpuBenchmark;
+	private Integer ram;
+	@Column(name = "memory_capacity")
+	private Integer memoryCapacity;
+	@Column(name = "memory_type")
+	private String memoryType;
 	private String gpu;
-	private String opsys;
-	private String weight;
-	private Double price;
+	@Column(name = "gpu_benchmark")
+	private Integer gpuBenchmark;
+	private String os;
+	private Float weight;
+	@Column(name = "price_euro")
+	private Float price;
 	
 	
 	public Laptop() {
@@ -35,18 +49,23 @@ public class Laptop {
 
 	
 
-	public Laptop(Integer id, String company, String product, String typename, Double inches, String screenResolution,
-			String ram, String memory, String gpu, String opsys, String weight, Double price) {
+	public Laptop(Integer id, String company, String product, String typename, Float inches, String screenResolution, Integer resolutionBenchmark,
+			String cpu, Integer cpuBenchmark, Integer ram, Integer memoryCapacity, String memoryType, String gpu, Integer gpuBenchmark, String os, Float weight, Float price) {
 		this.id = id;
 		this.company = company;
 		this.product = product;
 		this.typename = typename;
 		this.inches = inches;
 		this.screenResolution = screenResolution;
+		this.resolutionBenchmark = resolutionBenchmark;
+		this.cpu = cpu;
+		this.cpuBenchmark = cpuBenchmark;
 		this.ram = ram;
-		this.memory = memory;
+		this.memoryCapacity = memoryCapacity;
+		this.memoryType = memoryType;
 		this.gpu = gpu;
-		this.opsys = opsys;
+		this.gpuBenchmark = gpuBenchmark;
+		this.os = os;
 		this.weight = weight;
 		this.price = price;
 	}
@@ -55,17 +74,22 @@ public class Laptop {
 
 
 
-	public Laptop(String company, String product, String typename, Double inches, String screenResolution, String ram,
-			String memory, String gpu, String opsys, String weight, Double price) {
+	public Laptop( String company, String product, String typename, Float inches, String screenResolution, Integer resolutionBenchmark,
+			String cpu, Integer cpuBenchmark, Integer ram, Integer memoryCapacity, String memoryType, String gpu, Integer gpuBenchmark, String os, Float weight, Float price) {
 		this.company = company;
 		this.product = product;
 		this.typename = typename;
 		this.inches = inches;
 		this.screenResolution = screenResolution;
+		this.resolutionBenchmark = resolutionBenchmark;
+		this.cpu = cpu;
+		this.cpuBenchmark = cpuBenchmark;
 		this.ram = ram;
-		this.memory = memory;
+		this.memoryCapacity = memoryCapacity;
+		this.memoryType = memoryType;
 		this.gpu = gpu;
-		this.opsys = opsys;
+		this.gpuBenchmark = gpuBenchmark;
+		this.os = os;
 		this.weight = weight;
 		this.price = price;
 	}
@@ -80,55 +104,6 @@ public class Laptop {
 		this.id = id;
 	}
 
-	public String getRam() {
-		return ram;
-	}
-
-	public void setRam(String ram) {
-		this.ram = ram;
-	}
-
-	public String getMemory() {
-		return memory;
-	}
-
-	public void setMemory(String memory) {
-		this.memory = memory;
-	}
-
-	public String getGpu() {
-		return gpu;
-	}
-
-	public void setGpu(String gpu) {
-		this.gpu = gpu;
-	}
-
-	public String getOpsys() {
-		return opsys;
-	}
-
-	public void setOpsys(String opsys) {
-		this.opsys = opsys;
-	}
-
-	public String getWeight() {
-		return weight;
-	}
-
-	public void setWeight(String weight) {
-		this.weight = weight;
-	}
-
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-
-	
 
 
 	public String getCompany() {
@@ -167,13 +142,13 @@ public class Laptop {
 
 
 
-	public Double getInches() {
+	public Float getInches() {
 		return inches;
 	}
 
 
 
-	public void setInches(Double inches) {
+	public void setInches(Float inches) {
 		this.inches = inches;
 	}
 
@@ -191,12 +166,148 @@ public class Laptop {
 
 
 
+	public Integer getResolutionBenchmark() {
+		return resolutionBenchmark;
+	}
+
+
+
+	public void setResolutionBenchmark(Integer resolutionBenchmark) {
+		this.resolutionBenchmark = resolutionBenchmark;
+	}
+
+
+
+	public String getCpu() {
+		return cpu;
+	}
+
+
+
+	public void setCpu(String cpu) {
+		this.cpu = cpu;
+	}
+
+
+
+	public Integer getCpuBenchmark() {
+		return cpuBenchmark;
+	}
+
+
+
+	public void setCpuBenchmark(Integer cpuBenchmark) {
+		this.cpuBenchmark = cpuBenchmark;
+	}
+
+
+
+	public Integer getRam() {
+		return ram;
+	}
+
+
+
+	public void setRam(Integer ram) {
+		this.ram = ram;
+	}
+
+
+
+	public Integer getMemoryCapacity() {
+		return memoryCapacity;
+	}
+
+
+
+	public void setMemoryCapacity(Integer memoryCapacity) {
+		this.memoryCapacity = memoryCapacity;
+	}
+
+
+
+	public String getMemoryType() {
+		return memoryType;
+	}
+
+
+
+	public void setMemoryType(String memoryType) {
+		this.memoryType = memoryType;
+	}
+
+
+
+	public String getGpu() {
+		return gpu;
+	}
+
+
+
+	public void setGpu(String gpu) {
+		this.gpu = gpu;
+	}
+
+
+
+	public Integer getGpuBenchmark() {
+		return gpuBenchmark;
+	}
+
+
+
+	public void setGpuBenchmark(Integer gpuBenchmark) {
+		this.gpuBenchmark = gpuBenchmark;
+	}
+
+
+
+	public String getOs() {
+		return os;
+	}
+
+
+
+	public void setOs(String os) {
+		this.os = os;
+	}
+
+
+
+	public Float getWeight() {
+		return weight;
+	}
+
+
+
+	public void setWeight(Float weight) {
+		this.weight = weight;
+	}
+
+
+
+	public Float getPrice() {
+		return price;
+	}
+
+
+
+	public void setPrice(Float price) {
+		this.price = price;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Laptop [id=" + id + ", company=" + company + ", product=" + product + ", typename=" + typename
-				+ ", inches=" + inches + ", screenResolution=" + screenResolution + ", ram=" + ram + ", memory="
-				+ memory + ", gpu=" + gpu + ", opsys=" + opsys + ", weight=" + weight + ", price=" + price + "]";
+				+ ", inches=" + inches + ", screenResolution=" + screenResolution + ", resolutionBenchmark="
+				+ resolutionBenchmark + ", cpu=" + cpu + ", cpuBenchmark=" + cpuBenchmark + ", ram=" + ram
+				+ ", memoryCapacity=" + memoryCapacity + ", memoryType=" + memoryType + ", gpu=" + gpu
+				+ ", gpuBenchmark=" + gpuBenchmark + ", os=" + os + ", weight=" + weight + ", price=" + price + "]";
 	}
+
+
 
 	
 	
